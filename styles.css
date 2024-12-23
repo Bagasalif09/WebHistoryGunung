@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', sans-serif bold;
+    background-color: #0f0f0f;
+    color: #ffffff;
+}
+
+header {
+    background-color: #ff8400;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-align: left;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+aside {
+    width: 20%;
+    height: 100vh; /* Membuat aside mengisi seluruh tinggi layar */
+    background-color: #0f0f0f;
+    padding: 20px;
+}
+
+aside nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside nav ul li {
+    margin: 10px 0;
+}
+
+aside nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+}
+
+aside nav ul li a.active,
+aside nav ul li a:hover {
+    background-color: #ef0fab;
+}
+
+main {
+    width: 80%;
+    padding: 10px;
+    background-color: #1e1d1d;
+}
+
+#map {
+        height: 700px; /* Sesuaikan dengan ukuran yang diinginkan */
+        width: 100%;
+    
+        background-color: #d3d3d3; /* Warna latar abu-abu untuk wilayah luar */
+
+    
+}
+
+.history-list {
+    padding: 20px;
+    background-color: #0e0e0e;
+}
+
+.history-item {
+    margin-bottom: 20px;
+    background-color: #393434;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(241, 238, 238, 0.1);
+}
+
+.intro {
+    align-items: center;
+}
+
+.custom-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Gaya legenda di Leaflet */
+.info.legend {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+    color: #000000;
+    width: 150px; /* Lebar legend */
+    max-height: 200px; /* Maksimal tinggi */
+    overflow-y: auto; /* Scroll vertical */
+    overflow-x: hidden; /* Scroll horizontal disembunyikan */
+    padding-right: 5px; /* Tambahkan padding agar scrollbar tidak memotong isi legend */
+}
+
+
+.info.legend h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    text-align: center;
+    color: #000000;
+}
+
+.info.legend ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info.legend li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.info.legend .marker {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #000000;
+}
+
+.info.legend .marker.red {
+    background-color: #ff0000; /* Merah untuk gunung aktif */
+}
+
+.info.legend .marker.blue {
+    background-color: #0000ff; /* Biru untuk gunung tidak aktif */
+}
+
+.info.legend .kotak {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    border: 1px solid #000000;
+}
+
+.info.legend .kotak.elevasi-1 {
+    background-color: #b8f7d4; /* Hijau muda untuk area dataran rendah (0-200 mdpl) */
+}
+
+.info.legend .kotak.elevasi-2 {
+    background-color: #85bb65; /* Hijau sedang untuk area rendah (200-500 mdpl) */
+}
+
+.info.legend .kotak.elevasi-3 {
+    background-color: #bdb76b; /* Kuning kecoklatan untuk area menengah (500-1.000 mdpl) */
+}
+
+.info.legend .kotak.elevasi-4 {
+    background-color: #decfa3; /* Coklat terang untuk area sedang (1.000-1.500 mdpl) */
+}
+
+.info.legend .kotak.elevasi-5 {
+    background-color: #643716; /* Coklat tua untuk area tinggi (1.500-2.000 mdpl) */
+}
+
+.info.legend .kotak.elevasi-6 {
+    background-color: #040404; /* Coklat sangat tua untuk area lebih tinggi (2.000-3.000 mdpl) */
+}
+
+.info.legend .kotak.elevasi-7 {
+    background-color: #ffffff; /* Putih untuk area puncak (> 3.000 mdpl) */
+}
+
+
+.north-arrow {
+    position: right;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 10px;
+    background-image: url('north-arrow.png'); /* Ganti dengan path gambar */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.team ul li .nim {
+    color: #333333; /* Abu-abu tua untuk NIM */
+    font-style: italic;
+}

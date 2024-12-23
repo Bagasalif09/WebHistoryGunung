@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Aktivitas Gunung</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const container = document.querySelector('.history-list');
+
+            fetch('http://localhost/spasial/api.php?action=volcanoes')
+                .then(response => response.json())
+                .then(volcanoData => {
+                    volcanoData.forEach(volcano => {
+                        const item = document.createElement('div');
+                        item.className = 'history-item';
+                        item.innerHTML = `
+                            <h3>${volcano.name}</h3>
+                            <p>Status: ${volcano.status}</p>
+                            <p>Riwayat Aktivitas:</p>
+                            <ul>
+                                ${volcano.history
+                                    ? volcano.history.split(',').map(event => `<li>${event}</li>`).join('')
+                                    : '<li>Tidak ada riwayat</li>'}
+                            </ul>
+                        `;
+                        container.appendChild(item);
+                    });
+                })
+                .catch(error => {
+                    console.error("Gagal memuat data:", error);
+                    container.innerHTML = `<p>Gagal memuat data riwayat aktivitas gunung. Silakan coba lagi nanti.</p>`;
+                });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Sistem Informasi Gunung Aktif </h1>
+    </header>
+
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="home.html">MAP</a></li>
+                    <li><a href="riwayat.html" class="active">Riwayat</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <div class="history-list"></div>
+        </main>
+    </div>
+</body>
+</html>
